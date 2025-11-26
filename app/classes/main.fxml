@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.quizapp.ui.QuizController"
+            maxWidth="Infinity"
+            maxHeight="Infinity"
+            style="-fx-background-color: linear-gradient(to bottom, #5b7bff, #2a4edb);">
+
+    <!-- TOP SECTION -->
+    <top>
+        <VBox spacing="6"
+              style="-fx-padding: 20 30;
+                     -fx-background-color: transparent;">
+
+            <Label fx:id="lblTitle"
+                   text="Level 1 (EASY)"
+                   style="-fx-font-size:26px;
+                          -fx-font-weight:bold;
+                          -fx-text-fill:white;
+                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.3, 0, 1);"/>
+
+            <Label fx:id="lblProgress"
+                   text="Question 1/4"
+                   style="-fx-font-size:17px;
+                          -fx-text-fill:#e0e7ff;"/>
+
+        </VBox>
+    </top>
+
+
+    <!-- CENTER SECTION -->
+    <center>
+        <!-- Outer container -->
+        <VBox spacing="25"
+              style="
+        -fx-padding: 35;
+        -fx-background-color: rgba(255,255,255,0.20);
+        -fx-background-radius: 25;
+        -fx-border-radius: 25;
+        -fx-border-color: rgba(255,255,255,0.35);
+        -fx-border-width: 1.5;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 28, 0.4, 0, 4);
+        -fx-max-width: 700;
+        -fx-min-width: 700;
+        -fx-min-height: 700;
+         -fx-max-height: 700;
+      ">
+
+
+            <!-- Question -->
+            <Label fx:id="lblQuestion"
+                   wrapText="true"
+                   text="Question will appear here..."
+                   style="-fx-font-size:24px;
+                      -fx-font-weight:bold;
+                      -fx-text-fill:white;
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.40), 5, 0.6, 0, 2);"/>
+
+            <!-- GRID FOR OPTIONS (2 columns) -->
+            <GridPane fx:id="optionsGrid"
+                      hgap="15"
+                      vgap="15"
+                      style="-fx-padding: 5;">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="100"/>
+                </columnConstraints>
+            </GridPane>
+
+        </VBox>
+    </center>
+
+
+    <!-- BOTTOM SECTION -->
+    <bottom>
+        <HBox spacing="15"
+              alignment="CENTER"
+              prefHeight="100"
+              style="-fx-background-color: rgba(255,255,255,0.18);
+             -fx-border-color: rgba(255,255,255,0.30);
+             -fx-border-width: 0 0 1 0;
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 18, 0.25, 0, -2);
+             -fx-padding: 15 30;">
+
+            <Button fx:id="btnNext"
+                    text="Next →"
+                    onAction="#onNextClicked"
+                    style="
+                -fx-background-color: linear-gradient(to right,#1dd1a1,#10ac84);
+                -fx-text-fill:white;
+                -fx-font-size:20px;
+                -fx-font-weight:bold;
+                -fx-background-radius:18;
+                -fx-padding:12px 35px;
+                -fx-cursor:hand;
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 12, 0.3, 0, 2);
+            "/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>
